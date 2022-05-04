@@ -3,7 +3,7 @@
 .nav.justify-content-end
   = link_to '一覧', todos_path, class: 'nav-link'
 
-= form_with(model: @task, local: true) do |f|
+= form_with(model: @todo, local: true) do |f|
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control', id: 'task_name'
