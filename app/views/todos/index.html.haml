@@ -11,5 +11,5 @@
   %tbody
     - @todos.each do |todo|
       %tr
-        %td= todo.name
+        %td= link_to todo.name, todo_path(todo), class: 'text-decoration-none'
         %td= todo.created_at

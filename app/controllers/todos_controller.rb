@@ -13,6 +13,10 @@ class TodosController < ApplicationController
     redirect_to todos_url, notice: "タスク「#{todo.name}」を登録しました。"
   end
 
+  def show
+    @todo = Todo.find(params[:id])
+  end
+
   private
     def todo_params
       params.require(:todo).permit(:name, :description)
