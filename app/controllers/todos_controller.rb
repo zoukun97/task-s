@@ -27,6 +27,12 @@ class TodosController < ApplicationController
     redirect_to todos_url, notice: "タスク「#{todo.name}」を更新しました。"
   end
 
+  def destroy
+    todo = Todo.find(params[:id])
+    todo.destroy
+    redirect_to todos_url, notice: "タスク「#{todo.name}」を削除しました。"
+  end
+
   private
     def todo_params
       params.require(:todo).permit(:name, :description)
