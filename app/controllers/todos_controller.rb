@@ -1,10 +1,12 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @todos = Todo.all
   end
 
   def new
-    @todo = Todo.new
+    @todo = current_user.todos.build
   end
 
   def create
