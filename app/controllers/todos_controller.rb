@@ -10,9 +10,12 @@ class TodosController < ApplicationController
   end
 
   def create
-    todo = current_user.todos.build(todo_params)
-    todo.save!
-    redirect_to todos_url, notice: "タスク「#{todo.name}」を登録しました。"
+    @todo = current_user.todos.build(todo_params)
+    if @todo.save
+      redirect_to todos_url, notice: "タスク「#{@todo.name}」を登録しました。"
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,9 +27,12 @@ class TodosController < ApplicationController
   end
 
   def update
-    todo = current_user.todos.find(params[:id])
-    todo.update!(todo_params)
-    redirect_to todos_url, notice: "タスク「#{todo.name}」を更新しました。"
+    @todo = current_user.todos.find(params[:id])
+    if @todo.update(todo_params)
+      redirect_to todos_url, notice: "タスク「#{@todo.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
