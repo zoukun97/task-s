@@ -27,6 +27,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'bootstrap'
 gem 'devise'
+gem 'active_model_serializers'
 
 
 # Use Active Storage variant
