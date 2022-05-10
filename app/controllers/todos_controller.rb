@@ -3,6 +3,11 @@ class TodosController < ApplicationController
 
   def index
     @todos = current_user.todos.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @todos }
+    end 
+
   end
 
   def new
