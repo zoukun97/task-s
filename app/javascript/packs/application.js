@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.add-todo-btn').on('click', () => {
     const todoName = $('#todo_name').val();
+    const todoDescription = $('#todo_description').val();
     console.log(todoName);
+    console.log(todoDescription);
   })
 })
