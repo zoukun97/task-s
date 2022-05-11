@@ -20,4 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.new').addClass('d-none')
     $('.form-group').removeClass('d-none')
   })
+
+  $('.add-todo-btn').on('click', () => {
+    const todoName = $('#todo_name').val();
+    console.log(todoName);
+  })
 })
