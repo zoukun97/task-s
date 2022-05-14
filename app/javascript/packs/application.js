@@ -11,3 +11,20 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import $ from 'jquery'
+import axios from 'axios'
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('.new').on('click', () => {
+    $('.new').addClass('d-none')
+    $('.form-group').removeClass('d-none')
+  })
+
+  $('.add-todo-btn').on('click', () => {
+    const todoName = $('#todo_name').val();
+    const todoDescription = $('#todo_description').val();
+    console.log(todoName);
+    console.log(todoDescription);
+  })
+})

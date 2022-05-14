@@ -1,6 +1,14 @@
 %h1 タスク一覧
 
-= link_to '新規登録', new_todo_path, class: 'btn btn-primary'
+.btn.btn-primary.new
+  = '新規登録'
+.form-group.d-none
+  = 'Name'
+  = text_field_tag :todo_name, '', class: 'form-control'
+  = 'Description'
+  = text_area_tag :todo_description, '', class: 'form-control'
+  .btn.btn-primary.add-todo-btn
+    = '登録'
 
 .mb-3
 %table.table.table-hover
